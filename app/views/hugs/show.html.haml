@@ -1,7 +1,13 @@
 %h2
-	Package Name:
-	= @hug.name
+  Package Name:
+  = @hug.name
 %p= @hug.description
 %p
-	$
-	= @hug.price
+  $
+  = @hug.price
+
+= link_to "Order NOW", new_order_path(hug_id: @hug.id)
+
+
+
+

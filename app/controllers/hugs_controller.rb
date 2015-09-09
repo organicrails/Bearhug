@@ -4,6 +4,9 @@ class HugsController < ApplicationController
 		@hugs = Hug.all
 	end
 
+	def create
+	end
+
 	def show
 		@hug = Hug.find(params[:id])
 	end

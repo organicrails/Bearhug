@@ -11,14 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907192138) do
+ActiveRecord::Schema.define(version: 20150909202650) do
+
+  create_table "charges", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "hugs", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.decimal  "price",       precision: 5, scale: 2
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.integer  "price"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
+
+  create_table "orders", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "hug_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "email"
+    t.string   "card_token"
+  end
+
+  add_index "orders", ["hug_id"], name: "index_orders_on_hug_id"
 
 end
