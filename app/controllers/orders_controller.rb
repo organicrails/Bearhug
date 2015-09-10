@@ -13,8 +13,6 @@ class OrdersController < ApplicationController
 	end
 
 	private
-
-	private
     def stripe_params
       params.permit :stripeEmail, :stripeToken
     end

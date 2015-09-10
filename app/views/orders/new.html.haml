@@ -4,4 +4,4 @@
   = f.text_field :name
   = f.label :email
   = f.text_field :email
-  %script.stripe-button{"data-amount" => @hug.price*100, "data-description" => "A month's subscription", "data-key" => Rails.configuration.stripe[:publishable_key], "data-locale" => "auto", :src => "https://checkout.stripe.com/checkout.js"}
+  %script.stripe-button{"data-amount" => @hug.price*100, "data-description" => @hug.name, "data-key" => Rails.configuration.stripe[:publishable_key], "data-locale" => "auto", :src => "https://checkout.stripe.com/checkout.js"}
